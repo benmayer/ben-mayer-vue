@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 #OS junk files
 [Tt]humbs.db
-*.DS_Store
+/.DS_Store
 
 ### Node template
 # Logs
@@ -86,3 +86,4 @@ dist
 
 # Service worker
 sw.*
+.DS_Store

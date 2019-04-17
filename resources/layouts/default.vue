@@ -1,55 +1,95 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="site__wrapper">
+    <header class="site__header navbar" role="navigation">
+      <logo class="site__title" name="Vue Logo" />
+      <nav class="site__nav">
+        <ul class="menu-list">
+          <li v-for="(item, key) of items" :key="key">
+            <nuxt-link :to="item.to" exact-active-class="is-active">
+              {{ item.title }}
+            </nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="site__content">
+      <nuxt />
+    </section>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
+<script>
+import Logo from '~/components/Logo'
+
+export default {
+  components: {
+    Logo
+  },
+  data() {
+    return {
+      items: [
+        {
+          title: 'Map',
+          icon: 'map',
+          to: { name: 'index' }
+        },
+        {
+          title: 'About',
+          icon: 'lightbulb',
+          to: { name: 'about' }
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<style type="text/css">
+.site__wrapper {
+  font-family: $font-body;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $color-text-main;
+  padding-top: 100px;
 }
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+.site__header {
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  padding: 0.5em;
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  z-index: 10;
+}
+.site__title {
   margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+  font-weight: 100;
+  font-size: 1.5em;
   text-decoration: none;
-  padding: 10px 30px;
 }
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.site__nav {
+  display: flex;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
+.site__nav a {
+  position: relative;
   text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
 }
+.site__nav .router-link-exact-active:after {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 3px;
+  height: 3px;
+  border-radius: 1000px;
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+  background-color: currentColor;
+}
+.nav-section {
+  display: inline-block;
+  margin: auto;
 }
 </style>

@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
 ### Node template
 # Logs
 logs

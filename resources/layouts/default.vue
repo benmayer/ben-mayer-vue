@@ -52,7 +52,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $color-text-main;
-  padding-top: 100px;
 }
 .site__header {
   display: block;

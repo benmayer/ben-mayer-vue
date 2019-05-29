@@ -2,6 +2,8 @@
 
 const path = require('path')
 
+const dotenv = require('dotenv').config()
+
 /*
 |--------------------------------------------------------------------------
 | Providers
@@ -63,4 +65,4 @@ const commands = [
   'App/Commands/NuxtBuild'
 ]
 
-module.exports = { providers, aceProviders, aliases, commands }
+module.exports = { dotenv, providers, aceProviders, aliases, commands }

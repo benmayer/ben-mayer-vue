@@ -29,6 +29,7 @@
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
     "nuxt": "^2.4.0",
+    "vue2-gmap-custom-marker": "^5.5.9",
     "vue2-google-maps": "^0.10.6"
   },
   "devDependencies": {

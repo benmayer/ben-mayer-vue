@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "ben-mayer-1555360556148",
+    "develop": "ben-mayer-1555360556148",
+    "staging": "ben-mayer-1555360556148",
+    "production": "ben-mayer-1555360556148"
+  }
+}

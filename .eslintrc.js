@@ -2,20 +2,29 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    es6: true,
   },
-  globals: {
-    use: true
-  },
+  // Allow async/await with version 8.
   parserOptions: {
-    parser: 'babel-eslint'
+    ecmaVersion: 8,
+    parser: 'babel-eslint',
   },
   extends: [
-    '@nuxtjs',
-    'plugin:nuxt/recommended'
+    'eslint:recommended',
+    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    'plugin:vue/recommended',
   ],
-  // add your custom rules here
+  // Custom rules
   rules: {
-    'nuxt/no-cjs-in-config': 'off'
+    'no-console': 'off',
+  },
+  // In the store, allow empty-pattern for the actions functions.
+  overrides: {
+    files: ['store/*.js'],
+    rules: {
+      'no-empty-pattern': 'off',
+    },
   }
-}
+};

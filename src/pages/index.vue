@@ -1,14 +1,23 @@
 <template>
-  <section class="site__section">
-    <h1>Home</h1>
+  <section class="site__section" >
+    <h1>{{ title }}</h1>
   </section>
 </template>
 
 <script>
 
 export default {
-  name: 'HomePage',
-  components: {
+  data () {
+    return {
+      title: "Hi, I'm Ben."
+    }
+  },
+  head () {
+    return {
+      title: 'Home - Ben Mayer',
+      meta: [
+      ]
+    }
   }
 }
 </script>

@@ -10,7 +10,14 @@
 </template>
 
 <style>
-.logo {
-  display: block;
+.site__title {
+  margin: 0;
+  font-weight: 100;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.site__title a {
+  display: flex;
+  text-decoration: none;
 }
 </style>

@@ -33,6 +33,7 @@ module.exports = {
     ],
     script: [],
   },
+  
 
   // ======================================================================
   // Customize the progress bar color.
@@ -99,7 +100,7 @@ module.exports = {
     analyze: process.env.ENABLE_ANALYZE_MODE === 'true', // env variables are strings
     publicPath: '/assets/',
     extractCSS: true,
-    transpile: [/^vue2-google-maps($|\/)/, /^vue2-gmap-custom-marker($|\/)/],
+    transpile: [],
 
     // Extend webpack config
     extend(config, ctx) {

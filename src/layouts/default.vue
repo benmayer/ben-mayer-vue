@@ -4,22 +4,10 @@
       class="site__header navbar" 
       role="navigation"
     >
-      <logo />
-      <nav class="site__nav">
-        <ul class="menu-list">
-          <li 
-            v-for="(item, key) of items" 
-            :key="key"
-          >
-            <nuxt-link 
-              :to="item.to" 
-              exact-active-class="is-active"
-            >
-              {{ item.title }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </nav>
+      <Logo />
+      <Nav 
+        v-bind:items=pages
+      ></Nav>
     </header>
 
     <section class="site__content">
@@ -30,22 +18,22 @@
 
 <script>
 import Logo from '~/components/Logo'
+import Nav from '~/components/Nav'
 
 export default {
   components: {
-    Logo
+    Logo,
+    Nav,
   },
   data() {
     return {
-      items: [
+      pages: [
         {
           title: 'Home',
-          icon: 'home',
           to: { name: 'index' }
         },
         {
           title: 'About',
-          icon: 'lightbulb',
           to: { name: 'about' }
         }
       ]
@@ -63,7 +51,7 @@ export default {
   color: $color-text-main;
 }
 .site__header {
-  display: block;
+  display: flex;
   position: fixed;
   top: 20px;
   left: 10%;
@@ -71,39 +59,12 @@ export default {
   padding: 0.5em;
   background: #fff;
   border: 1px solid #f4f4f4;
+  background-color: rgba(255,255,255,0.99);
+  box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15);
   z-index: 10;
-}
-.site__title {
-  margin: 0;
-  font-weight: 100;
-  font-size: 1.5em;
-  text-decoration: none;
-}
-.site__nav {
-  display: flex;
-}
-.site__nav a {
-  position: relative;
-  text-decoration: none;
-}
-.site__nav .router-link-exact-active:after {
-  content: '';
-  display: block;
-  margin: auto;
-  width: 3px;
-  height: 3px;
-  border-radius: 1000px;
 
-  background-color: currentColor;
+  justify-content: space-between;
+  align-items: baseline;
 }
-.nav-section {
-  display: inline-block;
-  margin: auto;
-}
-.site__section {
-  width: 100%;
-  height:600px;
-  background:#efefef;
-  padding-top:120px;
-}
+
 </style>

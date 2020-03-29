@@ -4,10 +4,7 @@
       class="site__header navbar" 
       role="navigation"
     >
-      <logo 
-        class="site__title" 
-        name="Vue Logo" 
-      />
+      <logo />
       <nav class="site__nav">
         <ul class="menu-list">
           <li 
@@ -42,8 +39,8 @@ export default {
     return {
       items: [
         {
-          title: 'Map',
-          icon: 'map',
+          title: 'Home',
+          icon: 'home',
           to: { name: 'index' }
         },
         {
@@ -102,5 +99,11 @@ export default {
 .nav-section {
   display: inline-block;
   margin: auto;
+}
+.site__section {
+  width: 100%;
+  height:600px;
+  background:#efefef;
+  padding-top:120px;
 }
 </style>

@@ -40,8 +40,7 @@
     "nuxt": "^2.11.0",
     "vuetify": "^1.5.5",
     "vuetify-loader": "^1.4.3",
-    "vuexfire": "^3.0.0-alpha.5",
-    "vue2-google-maps": "^0.10.7"
+    "vuexfire": "^3.0.0-alpha.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -52,8 +51,8 @@
     "eslint": "^5.15.1",
     "eslint-loader": "^2.1.2",
     "eslint-plugin-vue": "next",
-    "firebase-tools": "^7.11.0",
-    "node-sass": "^4.11.0",
+    "firebase-tools": "^7.16.1",
+    "node-sass": "^4.13.1",
     "rimraf": "^3.0.0",
     "sass-loader": "^7.1.0"
   },

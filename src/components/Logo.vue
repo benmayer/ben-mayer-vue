@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="site__title">
     <a 
       href="/" 
       title="Ben Mayer - Product Manager"

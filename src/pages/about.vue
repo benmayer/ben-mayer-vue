@@ -1,13 +1,13 @@
 <template>
   <section class="site__section">
-    <h2 class="">
+    <h1 class="">
       Just start
-    </h2>
-    <h3 class="">
+    </h1>
+    <small class="">
       Author: <a 
         href="https://github.com/benmayer" 
         rel="self"
       >Ben Mayer</a>
-    </h3>
+    </small>
   </section>
 </template>

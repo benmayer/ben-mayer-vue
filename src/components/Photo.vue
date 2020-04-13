@@ -1,15 +1,32 @@
 <template>
-  <img :src="Photo.sizes.Thumbnail.source">
+  <img 
+    :src="default_url" 
+    :data-photo-id="photo_details.id"
+    :data-photo-title="photo_details.title"
+  >
 </template>
 
 <script>
   // import Flickr from 'flickr-sdk'
-  
   export default {
     props: {
       photo: {
         type: Object,
         required: true,
+      }
+    },
+    data () {
+      return {
+        photo_details: this.photo,
+        default_url: this.buildPhotoURL(this.photo),
+      }
+    },
+    methods: {
+      buildPhotoURL(Photo) {  
+        const base_url = 'https://live.staticflickr.com';
+        const default_type = 'jpg';
+        const default_size = '_t'; // Thumbnail
+        return `${base_url}/${Photo.server}/${Photo.id}_${Photo.secret}${default_size}.${default_type}`;
       }
     },
     async fetch() {
@@ -26,26 +43,6 @@
       //   return err;
       // });
 
-    },
-    data () {
-      const base_url = 'https://live.staticflickr.com';
-      const default_type = 'jpg';
-      const default_size = '_t'; // Thumbnail
-      
-      let Photo = this.photo;
-
-      Photo.sizes = {
-        "Thumbnail": {
-          label: 'Thumbnail',
-          width: 75,
-          height: 100,
-        }
-      }
-      Photo.sizes.Thumbnail.source = 
-        `${base_url}/${Photo.server}/${Photo.id}_${Photo.secret}${default_size}.${default_type}`
-      return {
-        Photo
-      }
     },
   }
 </script>

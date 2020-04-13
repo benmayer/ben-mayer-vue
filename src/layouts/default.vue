@@ -6,12 +6,12 @@
     >
       <Logo />
       <Nav 
-        v-bind:items=pages
-      ></Nav>
+        :pages="pages"
+      />
     </header>
 
     <section class="site__content">
-      <nuxt />
+      <Nuxt />
     </section>
   </div>
 </template>

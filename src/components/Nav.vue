@@ -2,16 +2,16 @@
   <div class="site__nav">
     <ul class="menu-list">
       <li 
-        class="menu-list-item"
-        v-for="(item, key) of items" 
+        v-for="(page, key) of pages" 
         :key="key"
+        class="menu-list-item"
       >
-        <nuxt-link 
-          :to="item.to" 
+        <NuxtLink 
+          :to="page.to" 
           exact-active-class="is-active"
         >
-          {{ item.title }}
-        </nuxt-link>
+          {{ page.title }}
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -19,14 +19,16 @@
 
 <script>
   export default {
-    props: ['items']
+    props: {
+      pages: {
+        type: Array,
+        required: true,
+      }
+    }
   }
 </script>
 
 <style>
-.logo {
-  display: block;
-}
 .site__nav {
   display: flex;
 }

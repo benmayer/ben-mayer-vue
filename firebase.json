@@ -3,6 +3,10 @@
     "public": "public",
     "rewrites": [
       {
+        "source": "/api/test",
+        "function": "test"
+      },
+      {
         "source": "**",
         "function": "ssrapp"
       }

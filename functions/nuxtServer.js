@@ -10,7 +10,7 @@ const config = {
   // Set the path to the .nuxt folder.
   buildDir: '.nuxt',
   // Enable debug when in the develop environment.
-  debug: process.env.GCP_PROJECT === 'nuxt2-example-dev',
+  debug: process.env.GCP_PROJECT === 'ben-mayer-1555360556148',
   // Path to the assets.
   build: {
     publicPath: '/assets/',

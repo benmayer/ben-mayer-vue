@@ -7,4 +7,5 @@ exports.ssrapp = require('./nuxtServer');
 
 
 // Export the redVsBlue API as "getRedVsBlue".
-// exports.getRedVsBlue = require('./api/redVsBlue');
+exports.test = require('./api/test');
+// exports.getRedVsBlue = require('./api/test');

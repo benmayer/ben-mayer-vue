@@ -11,14 +11,13 @@
 import Flickr from 'flickr-sdk'
 import Photos from '~/components/Photos'
 
-const FLICKR_API_KEY = process.env.FLICKR_API_KEY || "" ;
-
 export default {
   components: {
     Photos
   },
   async asyncData() {
     // TODO: process.env.FLICKR_API_KEY breaks on front end navigation unless authkey is added to hardcoded.
+    const FLICKR_API_KEY = process.env.FLICKR_API_KEY || "";
     const flickr = new Flickr(FLICKR_API_KEY);
     const photos = await flickr.people.getPhotos({
       user_id: "95062969@N03"
@@ -29,9 +28,18 @@ export default {
     });
     return { photos: photos }
   },
+  // this doesn't work yet
+  // async fetch() {
+  //   this.photos = await this.$http.$get('/api/test')
+
+  //   console.log(this.photos)
+  // },
   data () {
     return {
-      title: "Hi, I'm Ben."
+      title: "Hi, I'm Ben.",
+      photos: {
+        photo: []
+      }
     }
   },
   head () {

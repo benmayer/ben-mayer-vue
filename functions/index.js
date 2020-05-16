@@ -6,6 +6,6 @@
 exports.ssrapp = require('./nuxtServer');
 
 
-// Export the redVsBlue API as "getRedVsBlue".
-exports.test = require('./api/test');
-// exports.getRedVsBlue = require('./api/test');
+// Export the Flickr Photos API as "getPhotos".
+exports.photos = require('./api/photos');
+

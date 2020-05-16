@@ -8,32 +8,21 @@
 </template>
 
 <script>
-import Flickr from 'flickr-sdk'
 import Photos from '~/components/Photos'
 
 export default {
   components: {
     Photos
   },
-  async asyncData() {
-    // TODO: process.env.FLICKR_API_KEY breaks on front end navigation unless authkey is added to hardcoded.
-    const FLICKR_API_KEY = process.env.FLICKR_API_KEY || "";
-    const flickr = new Flickr(FLICKR_API_KEY);
-    const photos = await flickr.people.getPhotos({
-      user_id: "95062969@N03"
-    }).then(function (res) {
-      return res.body.photos;
-    }).catch(function (err) {
-      return err;
-    });
-    return { photos: photos }
-  },
-  // this doesn't work yet
-  // async fetch() {
-  //   this.photos = await this.$http.$get('/api/test')
+  async asyncData({ $axios }) {
+    // TODO won't load on client render 
+    
+    const flickrPhotos = await $axios.$get('http://localhost:5001/ben-mayer-1555360556148/us-central1/photos')
 
-  //   console.log(this.photos)
-  // },
+    return { 
+      photos: flickrPhotos
+    }
+  },
   data () {
     return {
       title: "Hi, I'm Ben.",
